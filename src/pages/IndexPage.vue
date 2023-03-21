@@ -15,6 +15,7 @@ import ChatPage from "./ChatPage.vue";
 const user = ref(null);
 
 const setCurrentUser = (signedUser) => {
+  console.log("user", signedUser);
   user.value = signedUser;
 };
 </script>

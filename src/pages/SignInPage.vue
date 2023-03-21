@@ -33,7 +33,7 @@ const login = async () => {
 
     emit("auth", {
       ...response.data,
-      secret: form.password,
+      secret: form.value.password,
     });
   } catch (error) {
     console.log(error);

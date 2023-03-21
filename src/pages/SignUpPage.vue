@@ -42,7 +42,7 @@ const registration = async () => {
 
     emit("auth", {
       ...response.data,
-      secret: form.password,
+      secret: form.value.password,
     });
   } catch (erro) {
     console.log(error);
