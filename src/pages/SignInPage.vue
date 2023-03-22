@@ -1,14 +1,25 @@
 <template>
-  <q-page-container class="flex center">
+  <div
+    class="flex justify-center items-center"
+    style="width: 100vw; height: 100vh"
+  >
     <q-form>
-      <div class="text-h2">Вход</div>
-      <q-btn @click="signInWithGoogle" label="Войти с помощью Google" />
-      <q-btn @click="signInWithGitHub" label="Войти с помощью GitHub" />
-      <q-btn @click="sugnOut" label="Выход" />
+      <div class="text-h2 text-center">Вход</div>
+      <div class="flex column">
+        <q-btn
+          class="q-mt-md"
+          @click="signInWithGoogle"
+          label="Войти с помощью Google"
+        />
+        <q-btn
+          class="q-mt-md"
+          @click="signInWithGitHub"
+          label="Войти с помощью GitHub"
+        />
+        <!-- <q-btn @click="sugnOut" label="Выход" /> -->
+      </div>
     </q-form>
-
-    <q-btn @click="get"></q-btn>
-  </q-page-container>
+  </div>
 </template>
 
 <script setup>
