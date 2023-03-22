@@ -1,7 +1,9 @@
 <template>
   <q-page style="min-height: 100vh">
-    <SignInPage v-if="!user" @auth="setCurrentUser" />
-    <!-- <SignUpPage v-if="!user" @auth="setCurrentUser" /> -->
+    <div v-if="!user" style="width: 100vw; height: 100vh">
+      <SignInPage class="q-mt-md" @auth="setCurrentUser" />
+      <SignUpPage class="q-mt-md" @auth="setCurrentUser" />
+    </div>
     <ChatPage v-else :username="user.username" :secret="user.secret" />
   </q-page>
 </template>

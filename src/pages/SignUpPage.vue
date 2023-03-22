@@ -1,7 +1,7 @@
 <template>
-  <q-page-container>
+  <div class="flex justify-center items-center">
     <q-form @submit.prevent="registration">
-      <div class="title">Вход</div>
+      <div class="title text-center">Вход</div>
       <q-input
         placeholder="Имя пользователя"
         type="text"
@@ -13,7 +13,7 @@
       <q-input placeholder="Пароль" type="password" v-model="form.password" />
       <button type="submit">Зарегистрироваться</button>
     </q-form>
-  </q-page-container>
+  </div>
 </template>
 
 <script setup>
@@ -42,7 +42,7 @@ const registration = async () => {
 
     emit("auth", {
       ...response.data,
-      secret: form.password,
+      secret: form.value.password,
     });
   } catch (erro) {
     console.log(error);

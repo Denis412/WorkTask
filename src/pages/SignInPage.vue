@@ -1,16 +1,18 @@
 <template>
-  <q-page-container>
-    <q-form @submit.prevent="login">
-      <div class="title">Вход</div>
-      <q-input
-        placeholder="Имя пользователя"
-        type="text"
-        v-model="form.username"
-      />
-      <q-input placeholder="Пароль" type="password" v-model="form.password" />
-      <button type="submit">Войти</button>
+  <div class="flex justify-center items-center">
+    <q-form class="" @submit.prevent="login">
+      <div class="title text-center">Вход</div>
+      <div class="flex column">
+        <q-input
+          placeholder="Имя пользователя"
+          type="text"
+          v-model="form.username"
+        />
+        <q-input placeholder="Пароль" type="password" v-model="form.password" />
+        <button type="submit">Войти</button>
+      </div>
     </q-form>
-  </q-page-container>
+  </div>
 </template>
 
 <script setup>
@@ -33,7 +35,7 @@ const login = async () => {
 
     emit("auth", {
       ...response.data,
-      secret: form.password,
+      secret: form.value.password,
     });
   } catch (error) {
     console.log(error);
